@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Brandon Grotesque, brandon-grotesque, Helvetica, sans-serif;
+    background-color: black;
+  }
+}
