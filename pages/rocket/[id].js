@@ -62,7 +62,7 @@ export default function rockets({ rocketsData, upcomingData, pastData }) {
             condition={upcomingFiltered.length === 0}
             wrapper={(children) => <div></div>}
           >
-            <div className="mt-8 ml-4 p-2 rounded-t-lg bg-zinc-800 text-white w-5/12 md:w-1/3 text-center">
+            <div className="mt-8 mx-4 p-2 rounded-t-lg bg-zinc-800 text-white w-5/12 md:w-1/3 text-center">
               <p>Upcoming Launches</p>
             </div>
           </ConditionalWrapper>
@@ -120,7 +120,7 @@ export default function rockets({ rocketsData, upcomingData, pastData }) {
             condition={pastFiltered.length === 0}
             wrapper={(children) => <div></div>}
           >
-            <div className="mt-8 ml-4 p-2 rounded-t-lg bg-zinc-800 text-white sm:w-5/12 md:w-1/3 text-center">
+            <div className="mt-8 mx-4 p-2 rounded-t-lg bg-zinc-800 text-white sm:w-5/12 md:w-1/3 text-center">
               <p>Past Launches</p>
             </div>
           </ConditionalWrapper>
