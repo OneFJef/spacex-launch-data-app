@@ -18,7 +18,7 @@ export default function rockets({ rocketsData, upcomingData, pastData }) {
   });
   console.log(upcomingFiltered);
   const upcompingSorted = upcomingFiltered.sort((a, b) =>
-    a.date_utc < b.date_utc ? 1 : -1
+    a.date_unix > b.date_unix ? 1 : -1
   );
 
   //   Filter and sorting of the past launches.
@@ -27,7 +27,7 @@ export default function rockets({ rocketsData, upcomingData, pastData }) {
   });
   console.log(pastFiltered);
   const pastSorted = pastFiltered.sort((a, b) =>
-    a.date_utc < b.date_utc ? 1 : -1
+    a.date_unix < b.date_unix ? 1 : -1
   );
 
   //   Wrapper to give logic to API data that is not available.
@@ -103,9 +103,9 @@ export default function rockets({ rocketsData, upcomingData, pastData }) {
                 <p className="my-4 pr-4">
                   Launch Date:{" "}
                   <span className="text-orange-400 inline-block">
-                    {dayjs(upcomingMapped.date_utc).format(
-                      "dddd, MMMM M, YYYY [at] HH:mm[Z]"
-                    )}
+                    {dayjs
+                      .unix(upcomingMapped.date_unix)
+                      .format("dddd, MMMM D, YYYY [at] HH:mm")}
                   </span>
                 </p>
                 <p className="my-2 pr-4">
@@ -120,7 +120,7 @@ export default function rockets({ rocketsData, upcomingData, pastData }) {
             condition={pastFiltered.length === 0}
             wrapper={(children) => <div></div>}
           >
-            <div className="mt-8 mx-4 p-2 rounded-t-lg bg-zinc-800 text-white sm:w-5/12 md:w-1/3 text-center">
+            <div className="mt-8 mx-4 p-2 rounded-t-lg bg-zinc-800 text-white w-5/12 md:w-1/3 text-center">
               <p>Past Launches</p>
             </div>
           </ConditionalWrapper>
@@ -160,9 +160,9 @@ export default function rockets({ rocketsData, upcomingData, pastData }) {
                 <p className="my-2 pr-4">
                   Launch Date:{" "}
                   <span className="text-orange-400 inline-block">
-                    {dayjs(pastMapped.date_utc).format(
-                      "dddd, MMMM M, YYYY [at] HH:mm[Z]"
-                    )}
+                    {dayjs
+                      .unix(pastMapped.date_unix)
+                      .format("dddd, MMMM D, YYYY [at] HH:mm")}
                   </span>
                 </p>
                 <p className="my-2 pr-4">
