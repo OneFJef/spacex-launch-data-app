@@ -16,7 +16,6 @@ export default function rockets({ rocketsData, upcomingData, pastData }) {
   const upcomingFiltered = upcomingData.filter((obj) => {
     return obj.rocket === id;
   });
-  console.log(upcomingFiltered);
   const upcompingSorted = upcomingFiltered.sort((a, b) =>
     a.date_unix > b.date_unix ? 1 : -1
   );
@@ -25,7 +24,6 @@ export default function rockets({ rocketsData, upcomingData, pastData }) {
   const pastFiltered = pastData.filter((obj) => {
     return obj.rocket === id;
   });
-  console.log(pastFiltered);
   const pastSorted = pastFiltered.sort((a, b) =>
     a.date_unix < b.date_unix ? 1 : -1
   );
