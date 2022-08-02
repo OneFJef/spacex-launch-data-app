@@ -42,24 +42,25 @@ export default function dropdown() {
               className={({ active }) =>
                 classNames(
                   active ? "text-white bg-orange-400" : "text-zinc-800",
-                  "cursor-default select-none relative py-2 pl-3 pr-9"
+                  "cursor-default select-none relative py-2 pl-3"
                 )
               }
               value={rocket}
             >
               {({ selected, active }) => (
                 <>
-                  <div className="flex items-center">
-                    <span
-                      className={classNames(
-                        selected ? "font-semibold" : "font-normal",
-                        "ml-3 block truncate"
-                      )}
-                    >
-                      <Link href={`/rocket/${rocket.id}`}>{rocket.name}</Link>
-                    </span>
-                  </div>
-
+                  <Link href={`/rocket/${rocket.id}`}>
+                    <div className="flex items-center">
+                      <span
+                        className={classNames(
+                          selected ? "font-semibold" : "font-normal",
+                          "ml-3 block truncate"
+                        )}
+                      >
+                        {rocket.name}
+                      </span>
+                    </div>
+                  </Link>
                   {selected ? (
                     <span
                       className={classNames(
