@@ -49,7 +49,7 @@ export default function dropdown() {
             >
               {({ selected, active }) => (
                 <>
-                  <Link href={`/rocket/${rocket.id}`}>
+                  <a href={`/rocket/${rocket.id}`}>
                     <div className="flex items-center">
                       <span
                         className={classNames(
@@ -60,7 +60,7 @@ export default function dropdown() {
                         {rocket.name}
                       </span>
                     </div>
-                  </Link>
+                  </a>
                   {selected ? (
                     <span
                       className={classNames(
