@@ -125,57 +125,61 @@ export default function rockets({ rocketsData, upcomingData, pastData }) {
           {pastSorted.map((pastMapped) => (
             <div
               key={pastMapped.id}
-              className="flex items-center bg-zinc-800 border border-zinc-500 mb-4"
+              className="flex bg-zinc-800 border border-zinc-500 mb-4"
             >
-              <div className="flex p-4 justify-center items-center h-auto w-40">
-                <ConditionalWrapper
-                  condition={pastMapped.links.patch.small}
-                  wrapper={(children) => (
-                    <Image
-                      alt={pastMapped.name}
-                      src={pastMapped.links.patch.small}
-                      width={150}
-                      height={150}
-                    />
-                  )}
-                >
-                  <Image
-                    alt={pastMapped.name}
-                    src={"/spacex_logo.jpeg"}
-                    width={115}
-                    height={115}
-                    className="rounded-full"
-                  />
-                </ConditionalWrapper>
-              </div>
-              <div className="text-white w-2/3">
-                <p className="my-2 pr-4">
-                  Mission Name:{" "}
-                  <span className="text-orange-400 inline-block">
-                    {pastMapped.name}
-                  </span>
-                </p>
-                <p className="my-2 pr-4">
-                  Launch Date:{" "}
-                  <span className="text-orange-400 inline-block">
-                    {dayjs
-                      .unix(pastMapped.date_unix)
-                      .format("dddd, MMMM D, YYYY [at] HH:mm [GMT]")}
-                  </span>
-                </p>
-                <p className="my-2 pr-4">
-                  Launch Details:{" "}
+              <div className="flex items-start">
+                <div className="flex p-4 justify-center items-center h-auto w-40">
                   <ConditionalWrapper
-                    condition={pastMapped.details}
+                    condition={pastMapped.links.patch.small}
                     wrapper={(children) => (
-                      <span className="text-orange-400 inline-block">
-                        {pastMapped.details}
-                      </span>
+                      <Image
+                        alt={pastMapped.name}
+                        src={pastMapped.links.patch.small}
+                        width={150}
+                        height={150}
+                      />
                     )}
                   >
-                    <span className="text-orange-400 inline-block">N/A</span>
+                    <Image
+                      alt={pastMapped.name}
+                      src={"/spacex_logo.jpeg"}
+                      width={115}
+                      height={115}
+                      className="rounded-full"
+                    />
                   </ConditionalWrapper>
-                </p>
+                </div>
+              </div>
+              <div className="flex items-center w-2/3">
+                <div className="text-white">
+                  <p className="my-2 pr-4">
+                    Mission Name:{" "}
+                    <span className="text-orange-400 inline-block">
+                      {pastMapped.name}
+                    </span>
+                  </p>
+                  <p className="my-2 pr-4">
+                    Launch Date:{" "}
+                    <span className="text-orange-400 inline-block">
+                      {dayjs
+                        .unix(pastMapped.date_unix)
+                        .format("dddd, MMMM D, YYYY [at] HH:mm [GMT]")}
+                    </span>
+                  </p>
+                  <p className="my-2 pr-4">
+                    Launch Details:{" "}
+                    <ConditionalWrapper
+                      condition={pastMapped.details}
+                      wrapper={(children) => (
+                        <span className="text-orange-400 inline-block">
+                          {pastMapped.details}
+                        </span>
+                      )}
+                    >
+                      <span className="text-orange-400 inline-block">N/A</span>
+                    </ConditionalWrapper>
+                  </p>
+                </div>
               </div>
             </div>
           ))}
