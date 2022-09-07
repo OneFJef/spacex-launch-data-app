@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { SelectorIcon } from "@heroicons/react/solid";
-import Link from "next/link";
 
 const rockets = [
   { id: "5e9d0d95eda69955f709d1eb", name: "Falcon 1" },
