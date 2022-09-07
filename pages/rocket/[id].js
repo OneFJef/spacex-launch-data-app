@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import dayjs from "dayjs";
-
+import { ChevronDoubleUpIcon } from "@heroicons/react/solid";
 import Dropdown from "../../components/dropdown";
+import Link from "next/link";
 
 export default function rockets({ rocketsData, upcomingData, pastData }) {
   const router = useRouter();
@@ -185,6 +186,7 @@ export default function rockets({ rocketsData, upcomingData, pastData }) {
           ))}
         </div>
       </ConditionalWrapper>
+      <button className="sticky inset-3 ml-auto z-50 bg-transparent hover:bg-orange-400 hover:border-white hover:border-dashed border-transparent border-2 rounded-full mt-2"><Link href={`/rocket/${id}`}><ChevronDoubleUpIcon className="text-white w-12 h-12"/></Link></button>
     </div>
   );
 }
