@@ -85,13 +85,13 @@ export default function rockets({ rocketsData, upcomingData, pastData }) {
                   <Image
                     alt={upcomingMapped.name}
                     src={"/spacex_logo.jpeg"}
-                    width={125}
-                    height={125}
+                    width={115}
+                    height={115}
                     className="rounded-full"
                   />
                 </ConditionalWrapper>
               </div>
-              <div className="text-white">
+              <div className="text-white w-2/3">
                 <p className="my-2 pr-4">
                   Mission Name:{" "}
                   <span className="text-orange-400 inline-block">
@@ -103,11 +103,11 @@ export default function rockets({ rocketsData, upcomingData, pastData }) {
                   <span className="text-orange-400 inline-block">
                     {dayjs
                       .unix(upcomingMapped.date_unix)
-                      .format("dddd, MMMM D, YYYY [at] HH:mm")}
+                      .format("dddd, MMMM D, YYYY [at] HH:mm [GMT]")}
                   </span>
                 </p>
                 <p className="my-2 pr-4">
-                  Success/Failure:{" "}
+                  Launch Details:{" "}
                   <span className="text-orange-400 inline-block">TBD</span>
                 </p>
               </div>
@@ -142,13 +142,13 @@ export default function rockets({ rocketsData, upcomingData, pastData }) {
                   <Image
                     alt={pastMapped.name}
                     src={"/spacex_logo.jpeg"}
-                    width={125}
-                    height={125}
+                    width={115}
+                    height={115}
                     className="rounded-full"
                   />
                 </ConditionalWrapper>
               </div>
-              <div className="text-white">
+              <div className="text-white w-2/3">
                 <p className="my-2 pr-4">
                   Mission Name:{" "}
                   <span className="text-orange-400 inline-block">
@@ -160,22 +160,20 @@ export default function rockets({ rocketsData, upcomingData, pastData }) {
                   <span className="text-orange-400 inline-block">
                     {dayjs
                       .unix(pastMapped.date_unix)
-                      .format("dddd, MMMM D, YYYY [at] HH:mm")}
+                      .format("dddd, MMMM D, YYYY [at] HH:mm [GMT]")}
                   </span>
                 </p>
                 <p className="my-2 pr-4">
-                  Success/Failure:{" "}
+                  Launch Details:{" "}
                   <ConditionalWrapper
-                    condition={pastMapped.success}
+                    condition={pastMapped.details}
                     wrapper={(children) => (
                       <span className="text-orange-400 inline-block">
-                        Success
+                        {pastMapped.details}
                       </span>
                     )}
                   >
-                    <span className="text-orange-400 inline-block">
-                      Failure - ________
-                    </span>
+                    <span className="text-orange-400 inline-block">N/A</span>
                   </ConditionalWrapper>
                 </p>
               </div>
