@@ -5,7 +5,9 @@ module.exports = {
   ],
   theme: {
     // black
-    // zinc-800
+    // white
+    // zinc-400/800
+    // orange-400
     extend: {
       backgroundImage: {
         spacex_background: "url('/spacex_background.jpeg')",
