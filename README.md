@@ -8,10 +8,10 @@ A web app to easily view SpaceX's upcoming and past rocket launch data.
 
 ## Features
 
-- Upcoming an past launches
+- Upcoming & past launches
 - Launch patches
 - Launch date/time
-- The launches success or failure/reason
+- Launch details
 
 ## Tech Stack
 
